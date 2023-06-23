@@ -11,8 +11,10 @@ def print_info(file):
 def write_info(file):
     name = input('Введите имя контакта: ')
     number = input('Введите номер контакта: ')
-    with open(file, 'a', encoding='utf-8') as f:
-        f.write( name + '-' + number + '\n')
+    with open(file, 'r', encoding='utf-8') as f:
+        lines = len(f.readlines())
+    with open(file, 'w', encoding='utf-8') as f:
+        f.write(str(lines) + ') ' + name + ' - ' + number + '\n')
     print('Готово')
 
 
