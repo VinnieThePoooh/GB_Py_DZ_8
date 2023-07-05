@@ -26,6 +26,9 @@ def change_info(file):
         lines = f.readlines()
         lines.pop(user_choice-1)
     print(lines)
+    with open(file, 'w', encoding='utf-8') as f:
+        for i in range (0, len(lines)):
+            f.write(lines[i])
     name = input('Введите имя контакта: ')
     number = input('Введите номер контакта: ')
     with open(file, 'a', encoding='utf-8') as f:
